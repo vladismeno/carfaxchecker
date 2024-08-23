@@ -1,0 +1,56 @@
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 111
+      MYSQL_DATABASE: carfaxchecker
+      MYSQL_USER: svs
+      MYSQL_PASSWORD: 111
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_USER: svs
+      MYSQL_ROOT_PASSWORD: 111
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+
+  django:
+    container_name: django
+    restart: always
+    build: .
+    command: [ "sh", "-c", "sleep 2 && python manage.py runserver 0.0.0.0:8000" ]
+#    command: [ "sh", "-c", "gunicorn --bind 0.0.0.0:8000 carfaxchecker.wsgi" ]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: nginx
+    restart: always
+    build: ./nginx
+    depends_on:
+      - django
+    ports:
+      - "80:80"
+    volumes:
+      - ./staticfiles/:/app/staticfiles/
+      - ./media/:/app/media/
+
+volumes:
+  mysql_data:
