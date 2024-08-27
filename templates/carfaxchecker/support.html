@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Support - Carfax reports - carfaxchecker.com
+{% endblock %}
+{% block meta_title %}
+    Support - Carfax reports - carfaxchecker.com
+{% endblock %}
+{% block meta_description %}
+    Support - Carfax reports - carfaxchecker.com History of a car from America by Vin code. ✅ Car history: accident, mileage, year and much more.
+{% endblock%}
+{% block og_title %}
+    Support - Carfax reports - carfaxchecker.com
+{% endblock %}
+{% block og_description %}
+    Support - Carfax reports - carfaxchecker.com History of a car from America by Vin code. ✅ Car history: accident, mileage, year and much more.
+{% endblock %}
+{% block twitter_title %}
+    Support - Carfax reports - carfaxchecker.com
+{% endblock %}
+{% block twitter_description %}
+    Support - Carfax reports - carfaxchecker.com History of a car from America by Vin code. ✅ Car history: accident, mileage, year and much more.
+{% endblock %}
+{% block content %}
+    <div wire:id="ebA3HFzqVMhsQeiX8J6Y"
+         wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;ebA3HFzqVMhsQeiX8J6Y&quot;,&quot;name&quot;:&quot;support-form&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;en\/support&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;9070b568&quot;,&quot;data&quot;:{&quot;userName&quot;:null,&quot;email&quot;:null,&quot;youQuestion&quot;:null,&quot;vin&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;35f15e8722bf39ee49b2a37c8345d45d52a59a5601dd3448e1cecfe83e95694f&quot;}}">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h2 class="text-center fs-3">
+                        If you have any questions, write to us. <br> We will be happy to help you.
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center"></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="form form-size ms-auto me-auto">
+                        <div class="form-floating mb-3">
+                            <input wire:model="vin" type="text" class="form-control" id="vin" name="vin" placeholder="VIN">
+                            <label for="supportName" class="form-label">VIN </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input wire:model="userName"
+                                   type="text"
+                                   class="form-control"
+                                   id="supportName"
+                                   name="supportName"
+                                   placeholder="name@example.com">
+                            <label for="supportName" class="form-label">Name </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input wire:model="email"
+                                   type="email"
+                                   class="form-control"
+                                   id="supportMail"
+                                   name="supportMail"
+                                   placeholder="name@example.com">
+                            <label for="supportMail" class="form-label">Email </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea wire:model="youQuestion"
+                                      class="form-control"
+                                      id="supportQuestion"
+                                      name="supportQuestion"
+                                      rows="5"
+                                      placeholder="Your question">
+                            </textarea>
+                            <label for="supportQuestion" class="form-label">Your question </label>
+                        </div>
+                        <div class="mb-3 text-end">
+                            <button class="btn btn-primary"
+                                    type="submit"
+                                    wire:click.prevent="sendSupportForm">Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

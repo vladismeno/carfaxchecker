@@ -10,3 +10,13 @@ class IndexView(View):
 
     def post(self, request):
         return render(request, 'index.html', {'message': 'Data received'})
+
+
+class SupportView(View):
+
+    def get(self, request: object) -> object:
+        context = {}
+        return render(request, 'support.html', context)
+
+    def post(self, request):
+        return render(request, 'support.html', {'message': 'Data received'})

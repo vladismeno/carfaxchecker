@@ -2,23 +2,34 @@
 <footer class="footer mt-auto py-4 bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div
-                    class="col-12 justify-content-center mb-3 d-flex flex-column flex-xxl-row flex-xl-row flex-lg-row flex-md-row">
-                <a
-                        href="https://carfaxcheck.com/en/privacy-policy"
-                        class="link-primary ps-3 pe-3  mb-3">Privacy Policy</a>
-                <a
-                        href="https://carfaxcheck.com/en/terms-conditions"
-                        class="link-primary ps-3 pe-3  mb-3">Terms and Conditions</a>
-                <a
-                        href="mailto:support@carfaxcheck.com"
-                        class="link-primary ps-3 pe-3  mb-3">Support - support@carfaxcheck.com</a>
+            <div class="col-12 justify-content-center mb-3 d-flex flex-column flex-xxl-row flex-xl-row flex-lg-row flex-md-row">
+                <a href="/privacy-policy" class="link-primary ps-3 pe-3  mb-3">Privacy Policy</a>
+                <a href="/terms-conditions" class="link-primary ps-3 pe-3  mb-3">Terms and Conditions</a>
+                <a href="mailto:support@carfaxchecker.com" class="link-primary ps-3 pe-3  mb-3">
+                    Support - support@carfaxchecker.com
+                </a>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-12 justify-content-center d-flex">
-                <p class="mb-0">© Copyright carfaxcheck.com All Rights Reserved.</p>
+                <p class="mb-0">© Copyright carfaxchecker.com All Rights Reserved.</p>
             </div>
         </div>
     </div>
 </footer>
+
+<script>
+    console.warn("Livewire: The published Livewire assets are out of date See: https://laravel-livewire.com/docs/installation/")
+</script>
+<script src="/vendor/livewire/livewire.js?id=21fa1dd78491a49255cd" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'hbKmICMcE1zJDNMVqbSDhPPvZ80iRJBRsRq0372z';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});
+</script>
+<script type="text/javascript">
+    Livewire.on('vinChecked', function () {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#checked-reports-state").offset().top
+        }, 100);
+    })
+</script>
